@@ -87,13 +87,6 @@ $result=mysqli_query($conn,$sql);
 
 }
 
-.logo img{
-  width: 200px;
-}
-.modal-content{
-  background: rgb(10, 143, 161);
-}
-
 </style>
 
 
@@ -106,7 +99,7 @@ $result=mysqli_query($conn,$sql);
 <center>
 
        
-<form action="add_user.php" method="POST" class="form border-dark badge-info  m-3 w-90 p-3">
+<form action="" method="POST" class="form border-dark badge-info  m-3 w-90 p-3">
    <div class="logo">
        <img style="width: 200px; ;" src="image/Picture1.jpg" alt="">
    </div>
@@ -134,102 +127,9 @@ $result=mysqli_query($conn,$sql);
 <button class="btn btn-success  w-25 btn-block" type="submit">Login</button>
 <p>Don't have account ?  <a href="">forget password</a></p>
 
-<button data-toggle="modal" data-target="#exampleModal" href="add_user.php"   class="btn btn-warning w-25 btn-block" type="button">Sign up</button>
+<a href="add_user.php"   class="btn btn-warning w-25 btn-block" type="button">Sign up</a>
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content ">
-        <div class="modal-header">
-          <h5 class="modal-title text-light" id="exampleModalLabel">New User</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body ">
-          <!--modal content-->
-          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" class="form border-dark   m-3 w-50 p-3">
-          <div class="logo">
-            <img src="image/picture1.png" alt="">
-          </div>
-          <div class=" row form-group">
-            <div class="col">
-            <label for="uname">First name:</label>
-            <input type="text" class="form-control" id="uname" placeholder="Enter username" name="fname" pattern="[A-Za-z]{2,}" title="Please we dont accept 2 letter names " required>
-            </div>
-            <div class="col">
-            <label for="uname">Last name:</label>
-              <input type="text" class="form-control" id="sname" placeholder="Enter Last" name="sname"  pattern="[A-Za-z]{2,}" title="Please we dont accept 2 letter names " required>
-            </div>
-          </div>
-         
-
-            <div class="form-group">
-            <label for="pwd">Email</label>
-            <input type="email" class="form-control" id="pwd" placeholder="Enter Email" name="email" required>
-          </div>
-
-          <div class="form-group">
-            <label for="pwd">Student id</label>
-            <input type="number" class="form-control" id="pwd" placeholder="0123155d" name="student_id" pattern="[a-zA-Z0-9-].{8}" title="Please follow the correct format" required>
-          </div>
-
-          <div class="row form-group">
-            <div class="col">
-            <label for="pwd">Password</label>
-            <input type="password" class="form-control" id="pwd" placeholder="Enter new password" name="pass1"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
-            </div>
-
-            <div class="col">
-            <label for="pwd">Confirm Password</label>
-            <input type="password" class="form-control" id="pwd" placeholder="Confirm password" name="pass2" required>
-            </div>
-          </div>
-
-
-
-
-          <div class="form-group">
-              <label for="pwd">Department</label>
-              <select name="dep" class="custom-select mb-3">
-                  <option selected> Select Department </option>
-                  <option value="Fashion">Fashion</option>
-                  <option value="Electricals">Electricals</option>
-                  <option value="Auto Mechanical">Auto Mechanical
-                  </option>
-                </select>
-            </div>
-
-          <div class="row form-group">
-            <div class="col">
-              <label for="pwd">Student contact</label>
-              <input type="number" class="form-control" id="studt-con" placeholder="233540948579" name="student_con"  pattern="([0-9]).{12}" title="Please follow the correct format" required>
-              </div>
-              <div class="col">
-              <label for="pwd">Parent contact</label>
-              <input type="number" class="form-control" id="studt-con" placeholder="233540948579" name="parent_con"  pattern="([0-9]).{12}" title="Please follow the correct format" required>
-              </div>
-                 </div>
-
-            <div class="form-group">
-              <label for="pwd">Place of location
-              </label>
-              <input type="text" class="form-control" id="parent-con" placeholder="Enter Location" name="location" required>
-            </div>
-          
-          
-          <input class="btn bg-warning" type="submit"  name="submits" value="submit">
-        </form>
-      <!-- Modal footer -->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
-          
-        </div>
-      </div>
-    </div>
-  </div>
 
 </center>
 </body>
