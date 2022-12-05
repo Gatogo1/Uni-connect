@@ -129,7 +129,7 @@ $result=mysqli_query($conn,$sql);
 
 <a href="add_user.php"   class="btn btn-warning w-25 btn-block" type="button">Sign up</a>
 
-
+</form>
 
 </center>
 </body>
