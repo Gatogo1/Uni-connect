@@ -62,7 +62,7 @@ $result=mysqli_query($conn,$sql);
 
 
     else{
-      echo"<script>alert('your mother!'); window.location='login.php'</script>";
+      echo"<script>alert('your id or password is incorrect!'); window.location='login.php'</script>";
     }
 
 
