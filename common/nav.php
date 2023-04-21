@@ -2,15 +2,13 @@
  
  <style>
   .carousel{
-    margin-top: 150px;
+    
   }
 
   
 @media only screen and (max-width: 425px){
 	/*Small smartphones [325px -> 425px]*/
-.carousel{
-    margin-top:100px
-}
+
 
 
 }
@@ -18,7 +16,7 @@
  
  
  
- <div  id=" carouselExampleIndicators" class=" container   carousel slide"  data-ride="carousel">
+ <div  id=" carouselExampleIndicators" class=" carousel slide"  data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -27,17 +25,26 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img class="d-block w-100" src="./image/b1.jpg" alt="First slide">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-            </div>
           </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="./image/b2.jpg" alt="Second slide">
+          <?php 
+/* Local Database*/
+
+include("conn.php");
+
+
+ $sql="SELECT `id`, `tittle`, `image`, `cat`, `by`, `status`, `date`, `contact` FROM `ads` WHERE cat='nav'";
+ $result = mysqli_query($conn,$sql)or die( mysqli_error($conn));
+
+ while ($row=mysqli_fetch_array($result)) {
+
+    $data=$row['id'];
+
+    
+        ?>
+          <div class="carousel-item ">
+            <img class="d-block w-100" src="admin/uploadAds/<?php echo $row['image'] ?>" alt="Second slide">
           </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="./image/b3.jpg" alt="Third slide">
-          </div>
+        <?php } ?>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>

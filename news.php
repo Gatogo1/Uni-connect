@@ -1,97 +1,60 @@
 
-<?php include("common/check_login.php")  ;?>
-
 <?php include("conn.php")  ;?>
 
 <?php include("common/head.php")  ;?>
 <?php include("common/check_login.php") ;?>
 <?php/* include("common/logo.php") */;?>
 
-<div class="container">
+<div class="">
 <?php include("common/day_activity.php") ;?>
 
     <?php include("common/nav.php") ;?>
 
     <!-- Top Sale -->
     <section id="top-sale">
-      <div class="container py-5">
+      <div class=" py-5">
         <h4 class="font-rubik font-size-20">Latex News</h4>
         <hr>
         <!-- owl carousel -->
-          <div class="owl-carousel owl-theme">
+
+        
+          <div class=" shadow-lg  owl-carousel owl-theme">
+          <?php 
+/* Local Database*/
+
+include("conn.php");
+
+
+ $sql="select * from news";
+ $result = mysqli_query($conn,$sql)or die( mysqli_error($conn));
+
+ while ($row=mysqli_fetch_array($result)) {
+
+  $data=$row['id'];
+
+  $link="new_datails.php?id=".urlencode(base64_encode($data));
+
+        ?>
             <div class="item py-2">
               <div class="product font-rale">
-                <a href="#"><img class="new-img" src="./image/ad2.jpg" alt="product1" class="img-fluid"></a>
+                <a href="<?=$link; ?>"><img class="new-img" src="admin/upload/<?php echo $row['image']?>" alt="product1" class="img-fluid"></a>
                 <div class="item-content">
                   <div class="main-content">
                     <div class="meta-category">
-                      <span>Fashion</span>
+                      <span><?php echo $row['cat']?></span>
                     </div>
-                    <a href="post-details.html"><h4>Responsive and Mobile Ready Layouts</h4></a>
+                    <a href="<?=$link; ?>"><h4><?php echo $row['tittle']?></h4></a>
                     <ul class="post-info">
-                      <li><a href="#">Admin</a></li>
-                      <li><a href="#">May 18, 2020</a></li>
-                      <li><a href="#">48 Comments</a></li>
+                      <li><a href="<?=$link; ?>"><?php echo $row['by']?></a></li>
+                      <li><a href="<?=$link; ?>"><?php echo $row['date']?></a></li>
+                      <li><a href="<?=$link; ?>">48 Comments</a></li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
-           
-            <div class="item py-2">
-              <div class="product font-rale">
-                <a href="#"><img class="new-img" src="./image/ad2.jpg" alt="product1" class="img-fluid"></a>
-                <div class="item-content">
-                  <div class="main-content">
-                    <div class="meta-category">
-                      <span>Fashion</span>
-                    </div>
-                    <a href="post-details.html"><h4>Responsive and Mobile Ready Layouts</h4></a>
-                    <ul class="post-info">
-                      <li><a href="#">Admin</a></li>
-                      <li><a href="#">May 18, 2020</a></li>
-                      <li><a href="#">48 Comments</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item py-2">
-              <div class="product font-rale">
-                <a href="#"><img class="new-img" src="./image/ad.jpg" alt="product1" class="img-fluid"></a>
-                <div class="item-content">
-                  <div class="main-content">
-                    <div class="meta-category">
-                      <span>Fashion</span>
-                    </div>
-                    <a href="post-details.html"><h4>Responsive and Mobile Ready Layouts</h4></a>
-                    <ul class="post-info">
-                      <li><a href="#">Admin</a></li>
-                      <li><a href="#">May 18, 2020</a></li>
-                      <li><a href="#">48 Comments</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item py-2">
-              <div class="product font-rale">
-                <a href="#"><img class="new-img" class="new-img" src="./image/b3.jpg" alt="product1" class="img-fluid"></a>
-                <div class="item-content">
-                  <div class="main-content">
-                    <div class="meta-category">
-                      <span>Fashion</span>
-                    </div>
-                    <a href="post-details.html"><h4>Responsive and Mobile Ready Layouts</h4></a>
-                    <ul class="post-info">
-                      <li><a href="#">Admin</a></li>
-                      <li><a href="#">May 18, 2020</a></li>
-                      <li><a href="#">48 Comments</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+           <?php } ?>
+
           </div>
         <!-- !owl carousel -->
       </div>
@@ -101,103 +64,62 @@
 
 <!--ads-->
 <section class="ads">
-  <center>
-  <div class=" container ads1">
-    <img  style="height: 200px;" src="./image/banner2-cr-500x150.jpg" alt="Third slide">
-  </div>
-</center>
+<?php include("common/depAds.php")  ;?>
 </section>
 <!--!ads-->
 <!-- Top intertainment -->
 <section id="top-sale">
-  <div class="container py-5">
-    <h4 class="font-rubik font-size-20">Academic News</h4>
-    <hr>
+  <div class="mt-5  shadow-lg ">
+    <h4 class="font-rubik text-center font-size-20"> <b> Academic News</b></h4>
+ 
     <!-- owl carousel -->
-      <div class="owl-carousel owl-theme">
-        <div class="item py-2">
-          <div class="product font-rale">
-            <a href="#"><img class="new-img" src="./image/ad2.jpg" alt="product1" class="img-fluid"></a>
-            <div class="item-content">
-              <div class="main-content">
-                <div class="meta-category">
-                  <span>Fashion</span>
+      <div class="  shadow-lg  rounded owl-carousel owl-theme">
+      <?php 
+/* Local Database*/
+
+include("conn.php");
+
+
+ $sql="select * from news where cat='Academics'";
+ $result = mysqli_query($conn,$sql)or die( mysqli_error($conn));
+
+ while ($row=mysqli_fetch_array($result)) {
+  $data=$row['id'];
+
+  $link="new_datails.php?id=".urlencode(base64_encode($data));
+
+
+        ?>
+            <div class="item ">
+              
+              <div class="product font-rale">
+                <a href="<?=$link; ?>"><img class="new-img" src="admin/upload/<?php echo $row['image']?>" alt="product1" class="img-fluid"></a>
+                <div class="item-content">
+                  <div class="main-content">
+                    <div class="meta-category">
+                      <span><?php echo $row['cat']?></span>
+                    </div>
+                    <a href="post-details.html"><h4><?php echo $row['tittle']?></h4></a>
+                    <ul class="post-info">
+                      <li><a href="<?=$link; ?>"><?php echo $row['by']?></a></li>
+                      <li><a href="<?=$link; ?>"><?php echo $row['date']?></a></li>
+                      <li><a href="<?=$link; ?>">48 Comments</a></li>
+                    </ul>
+                  </div>
                 </div>
-                <a href="post-details.html"><h4>Responsive and Mobile Ready Layouts</h4></a>
-                <ul class="post-info">
-                  <li><a href="#">Admin</a></li>
-                  <li><a href="#">May 18, 2020</a></li>
-                  <li><a href="#">48 Comments</a></li>
-                </ul>
               </div>
             </div>
-          </div>
-        </div>
-       
-        <div class="item py-2">
-          <div class="product font-rale">
-            <a href="#"><img class="new-img" src="./image/ad2.jpg" alt="product1" class="img-fluid"></a>
-            <div class="item-content">
-              <div class="main-content">
-                <div class="meta-category">
-                  <span>Fashion</span>
-                </div>
-                <a href="post-details.html"><h4>Responsive and Mobile Ready Layouts</h4></a>
-                <ul class="post-info">
-                  <li><a href="#">Admin</a></li>
-                  <li><a href="#">May 18, 2020</a></li>
-                  <li><a href="#">48 Comments</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item py-2">
-          <div class="product font-rale">
-            <a href="#"><img class="new-img" src="./image/ad.jpg" alt="product1" class="img-fluid"></a>
-            <div class="item-content">
-              <div class="main-content">
-                <div class="meta-category">
-                  <span>Fashion</span>
-                </div>
-                <a href="post-details.html"><h4>Responsive and Mobile Ready Layouts</h4></a>
-                <ul class="post-info">
-                  <li><a href="#">Admin</a></li>
-                  <li><a href="#">May 18, 2020</a></li>
-                  <li><a href="#">48 Comments</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item py-2">
-          <div class="product font-rale">
-            <a href="#"><img class="new-img" class="new-img" src="./image/b3.jpg" alt="product1" class="img-fluid"></a>
-            <div class="item-content">
-              <div class="main-content">
-                <div class="meta-category">
-                  <span>Fashion</span>
-                </div>
-                <a href="post-details.html"><h4>Responsive and Mobile Ready Layouts</h4></a>
-                <ul class="post-info">
-                  <li><a href="#">Admin</a></li>
-                  <li><a href="#">May 18, 2020</a></li>
-                  <li><a href="#">48 Comments</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+           <?php } ?>
       </div>
     <!-- !owl carousel -->
   </div>
 </section>
 <!-- !intertainment -->
 
-<!-- Special Price -->
+<!-- Special Price
 <section id="special-price">
-  <div class="container">
-    <h4 class="font-rubik font-size-20">Shop </h4>
+  <div class="  shadow-lg mt-5 p-3 rounded ">
+    <h4 class="font-rubik text-center font-size-20"><b>Shop</b></h4>
     <div id="filters" class="button-group text-right font-baloo font-size-16">
       <button class="btn is-checked" data-filter="*">All Brand</button>
       <button class="btn" data-filter=".Apple">Apple</button>
@@ -216,6 +138,7 @@
                 <h6>Pen</h6>
                 <div class="price py-2">
                   <span>$152</span>
+           
                 </div>
                 <button type="submit" class="btn btn-warning font-size-12">Add to Cart</button>
               </div>
@@ -293,38 +216,62 @@
       </div>
     </div>
   </div>
-</section>
+</section>---->
+<?php include("common/shop.php");?>
 <!-- !Special Price -->
 <br>
  <!-- Blogs -->
  <section id="blogs">
-  <div class="container py-4">
+  <div class="  shadow-lg p-3 rounded container py-4">
     <h4 class="font-rubik font-size-20">Latest Blogs</h4>
     <hr>
 
     <div class="owl-carousel owl-theme">
+
+    <?php 
+/* Local Database*/
+
+include("conn.php");
+
+
+ $sql="select * from news where cat='Blogs'";
+ $result = mysqli_query($conn,$sql)or die( mysqli_error($conn));
+
+ while ($row=mysqli_fetch_array($result)) {
+  $data=$row['id'];
+
+  $link="new_datails.php?id=".urlencode(base64_encode($data));
+
+
+        ?>
       <div class="item">
         <div class="card border-0 font-rale mr-5" style="width: 18rem;">
-          <h5 class="card-title font-size-16">Upcoming Mobiles</h5>
-          <img src="./image/15.png" alt="cart image" class="card-img-top">
-          <p class="card-text font-size-14 text-black-50 py-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis non iste sequi cupiditate tempora iure. Velit accusamus saepe harum sed.</p>
-          <a href="#" class="color-second text-left">Go somewhere</a>
+          <p class="card-title font-size-5">by :<span class="text-danger" ><?php echo $row['by']?></span></p>
+          <p><?php echo $row['date']?></p>
+          <img src="admin/upload/<?php echo $row['image']?>" alt="cart image" class="card-img-top">
+          <p class="card-text font-size-14  py-1"><a href=""> <?php echo $row['tittle']?></a></p>
+
+          <a href="#" class="color-second text-left">Read More</a>
         </div>
+       
       </div>
+      <?php } ?>
       <div class="item">
         <div class="card border-0 font-rale mr-5" style="width: 18rem;">
-          <h5 class="card-title font-size-16">Upcoming Mobiles</h5>
+        <p class="card-title font-size-5">by :<span class="text-danger" >Gatogo</span></p>
+          <p>January,14th 2022</p>
           <img src="./image/11.png" alt="cart image" class="card-img-top">
           <p class="card-text font-size-14 text-black-50 py-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis non iste sequi cupiditate tempora iure. Velit accusamus saepe harum sed.</p>
-          <a href="#" class="color-second text-left">Go somewhere</a>
+          <a href="#" class="color-second text-left">Read More</a>
         </div>
       </div>
       <div class="item">
         <div class="card border-0 font-rale mr-5" style="width: 18rem;">
-          <h5 class="card-title font-size-16">Upcoming Mobiles</h5>
+        <p class="card-title font-size-5">by :<span class="text-danger" >Gatogo</span></p>
+          <p>January,14th 2022</p>
           <img src="./image/12.png" alt="cart image" class="card-img-top">
           <p class="card-text font-size-14 text-black-50 py-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis non iste sequi cupiditate tempora iure. Velit accusamus saepe harum sed.</p>
-          <a href="#" class="color-second text-left">Go somewhere</a>
+          <a href="#" class="color-second text-left">Read More</a>
         </div>
       </div>
     </div>
@@ -333,10 +280,10 @@
 <!-- !Blogs -->
 
 <!--SRC-->
-<div class="container">
+<div class="   shadow-lg p-3 rounded container">
 
   <div class="heading-title text-center">
-    <h3 class="text-uppercase">THE SRC 2022/2023 </h3>
+    <h3 class="text-uppercase"> SRC 2022/2023 </h3>
    <hr>
 </div>
   <div class="row">
@@ -361,7 +308,7 @@
           </div>
           <div class="team-title">
               <h5>Martin Smith</h5>
-              <span>founder & ceo</span>
+              <span class="text-white">founder & ceo</span>
           </div>
       </div>
       <div class="col-md-4 col-sm-4">

@@ -270,37 +270,12 @@
         </div>
         
         <!-- Modal body -->
-        <form action="/action_page.php" class="was-validated p-3">
+        <form action="https://maps.google.com/maps" method="get" target="_blank" class="was-validated p-3">
             <div class="form-group">
-              <label for="department">Department Name</label>
-              <input type="text" class="form-control" id="department" placeholder="Enter Department" name="Department" required>
+              <label for="saddr">Department Name</label>
+              <input type="text" class="form-control" id="department" placeholder="Enter Department" name="saddr" required>
               <div class="valid-feedback">Valid.</div>
-              <div class="invalid-feedback">Please fill out this field.</div>
-            </div>
-            <div class="form-group">
-                <label for="hod">HOD</label>
-                <input type="text" class="form-control" id="hod" placeholder="Enter HOD name" name="hod" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
-              </div>
-
-            <!-- <div class="form-group">
-                <label for="exampleFormControlFile1">Example file input</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-              </div>
-
-              --> 
-             
-            <div class="form-group">
-              <label for="pwd">Year</label>
-              <input type="date" class="form-control" id="pwd" placeholder="Enter password" name="pwd" required>
-              <div class="valid-feedback">Valid.</div>
-              <div class="invalid-feedback">Please fill out this field.</div>
-            </div>
-
-            
-            
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit"  value="Get direction" class="btn btn-primary">Submit</button>
           </form>
         <!-- Modal footer -->
         <div class="modal-footer">

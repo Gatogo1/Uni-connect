@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
         <!-- Custom CSS file -->
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="">
       
 
 <?php
@@ -28,6 +28,21 @@
 include('conn.php');
 
 
+?>
+<?php /*
+// Get user device details
+$user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+// Print user device details
+echo "User device details: " . $user_agent;
+?>
+
+<?php
+// Get user IP address
+$user_ip = $_SERVER['REMOTE_ADDR'];
+
+// Print user IP address
+echo "User IP address: " . $user_ip; */
 ?>
 
 <?php
@@ -43,26 +58,26 @@ $id=stripcslashes($id);
 $pass=stripcslashes($pass);
 
 
-$sql = "SELECT * FROM users WHERE student_id='$id' AND pass='$pass'";
+$sql = "SELECT * FROM users WHERE student_id='$id' AND pass='$pass' AND status='1'";
 
 $result=mysqli_query($conn,$sql);
 
     $row=mysqli_fetch_array($result);
 
-    if($row["student_id"]==$id && $row['pass'] == $pass)
+    if($row["student_id"]==$id && $row['pass'] == $pass && $row['status']==1)
     {   
       $email=$row["email"];
-      $_SESSION['stu_id']=$row["student_id"];
-      $_SESSION['sname']=$row["sname"];
-        $_SESSION["usertype"]=$row['usertype'] ;
-
+      $_SESSION['id']=$row["id"];
+      $_SESSION['sname']=$row["username"];
+        $_SESSION["dep"]=$row['dep'];
+        $_SESSION["code"]=$row['codes'];
         $_SESSION['email']=$email;
         header("location:index.php");
     } 
 
 
     else{
-      echo"<script>alert('your id or password is incorrect!'); window.location='login.php'</script>";
+      echo"<script>alert(' $id $pass Your login details are incorrect! please try again  !'); window.location='login.php'</script>";
     }
 
 
@@ -96,7 +111,7 @@ $result=mysqli_query($conn,$sql);
     </title>
 </head>
 <body>
-<center>
+<center> 
 
        
 <form action="" method="POST" class="form border-dark badge-info  m-3 w-90 p-3">
@@ -104,7 +119,7 @@ $result=mysqli_query($conn,$sql);
        <img style="width: 200px; ;" src="image/Picture1.jpg" alt="">
    </div>
    <h4>Login</h4>
-    
+   <h5></h5> 
    <div class="  form-group">
 
        <label for="course">Student Id</label>

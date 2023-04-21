@@ -9,7 +9,8 @@ if(!isset($_SESSION['email']))
 
 <?php
 date_default_timezone_set('Africa/Accra');
-$date=  date("Y-M-D");
+$date=  date("M-D-jS-Y");
+$_SESSION['date']=$date;
 ?>
 <html lang="en">
     <head>

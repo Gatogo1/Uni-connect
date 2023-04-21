@@ -31,19 +31,14 @@
     <!-- Custom CSS file -->
     <link rel="stylesheet" href="css/style.css">
 <style>
-    
-    table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  text-align: center;
-}
-
-@media (max-width:480px){
-    .tab {
-    
-    font-size: 10px;
-    margin: none;
+    .table{
+        font-size: 12px;
+        margin: px;
+        
     }
+
+    .table tr ,td,th{
+        text-align: center;
     }
     .btn{
         font-size: 13px;
@@ -194,170 +189,72 @@
                 <hr style="background-color: red;">
                 
                 <!--Table-->
-                <h5 class='mb-3'>Class Time Table</h5>
-                <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#myModal">Add New</button>
-<!--Time table-->
+                <h5 class='mb-3'>Blogs Management</h5>
+                <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#myModal">New Blog</button>
 <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
-    <thead>
-        <tr>
-            <th class="th-sm">Days
-            </th>
-            <th class="th-sm">Department
-            </th>
-            <th class="th-sm">Time
-          </th>
-            <th class="th-sm">Subject
-            </th>
-            <th class="th-sm">Location
-            </th>
-            <th class="th-sm">Course hour
-          </th>
-            <th class="th-sm">Lecture
-            </th>
-            <th class="th-sm">Action
-            </th>
-          </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <img style="width: 80px;;" src="image/pro1.jpg" alt="">
-        </td>
-        <td>Gatogo Daniel</td>
-        <td>Admin</td>
-        <td>+233540948579</td>
-        <td>boyamg32@gmail.com</td>
-        <td>2/4/2022</td>
-        <td><span style="background: Green; color:aliceblue; padding:5px;">Active</span></td>
-        <td>
-  
-         <div class="row">
-          <div class="btn col-sm-1 m-2">
-              <a href="" class="btn bg-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-          </div>
-  
-          <div class="btn col-sm-1 m-2">
-              <a href="" class="btn bg-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-          </div>
-          <div class="btn col-sm-1 m-2">
-              <a href="" class="btn bg-success"><i class="fa fa-ban" aria-hidden="true"></i></a>
-          </div>
-         </div>
-          
-        </td>
-      </tr>
-  
-      <tr>
-          <td>
-            <img style="width: 80px;;" src="image/pro1.jpg" alt="">
-          </td>
-          <td>Gatogo Daniel</td>
-          <td>Admin</td>
-          <td>+233540948579</td>
-          <td>boyamg32@gmail.com</td>
-          <td>2/4/2022</td>
-          <td><span style="background: Green; color:aliceblue; padding:5px;">Active</span></td>
-          <td>
+  <thead>
+    <tr>
+      <th class="th-sm">Image
+      </th>
+      <th class="th-sm">Title
+      </th>
+      <th class="th-sm"> by
+    </th>
+      <th class="th-sm">Date
+      </th>
+      <th class="th-sm"> Position
+    </th>
+      <th class="th-sm">Action
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <img style="width: 80px;;" src="image/pro1.jpg" alt="">
+      </td>
+      <td>Gatogo Daniel</td>
+      <td>Admin</td>
+      <td>boyamg32@gmail.com</td>
     
-           <div class="row">
-            <div class="btn col-sm-1 m-2">
-                <a href="" class="btn bg-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-            </div>
+      <td><span style="background: Green; color:aliceblue; padding:5px;">Active</span></td>
+      <td>
+
+       <div class="row">
+        <div class="btn col-sm-1 m-2">
+            <a href="" class="btn bg-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+        </div>
+
+        <div class="btn col-sm-1 m-2">
+            <a href="" class="btn bg-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+        </div>
     
-            <div class="btn col-sm-1 m-2">
-                <a href="" class="btn bg-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-            </div>
-            <div class="btn col-sm-1 m-2">
-                <a href="" class="btn bg-success"><i class="fa fa-ban" aria-hidden="true"></i></a>
-            </div>
-           </div>
-            
-          </td>
-        </tr>
-  
-        <tr>
-          <td>
-            <img style="width: 80px;;" src="image/pro1.jpg" alt="">
-          </td>
-          <td>Gatogo Daniel</td>
-          <td>Admin</td>
-          <td>+233540948579</td>
-          <td>boyamg32@gmail.com</td>
-          <td>2/4/2022</td>
-          <td><span style="background: Green; color:aliceblue; padding:5px;">Active</span></td>
-          <td>
-    
-           <div class="row">
-            <div class="btn col-sm-1 m-2">
-                <a href="" class="btn bg-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-            </div>
-    
-            <div class="btn col-sm-1 m-2">
-                <a href="" class="btn bg-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-            </div>
-            <div class="btn col-sm-1 m-2">
-                <a href="" class="btn bg-success"><i class="fa fa-ban" aria-hidden="true"></i></a>
-            </div>
-           </div>
-            
-          </td>
-        </tr>
-  
-  
-        <tr>
-          <td>
-            <img style="width: 80px;;" src="image/pro1.jpg" alt="">
-          </td>
-          <td>Gatogo Daniel</td>
-          <td>Admin</td>
-          <td>+233540948579</td>
-          <td>boyamg32@gmail.com</td>
-          <td>2/4/2022</td>
-          <td><span style="background: Green; color:aliceblue; padding:5px;">Active</span></td>
-          <td>
-    
-           <div class="row">
-            <div class="btn col-sm-1 m-2">
-                <a href="" class="btn bg-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-            </div>
-    
-            <div class="btn col-sm-1 m-2">
-                <a href="" class="btn bg-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-            </div>
-            <div class="btn col-sm-1 m-2">
-                <a href="" class="btn bg-success"><i class="fa fa-ban" aria-hidden="true"></i></a>
-            </div>
-           </div>
-            
-          </td>
-        </tr>
-      
-    
+       </div>
         
-    </tbody>
-    <tfoot>
-        <tr>
-            <th class="th-sm">Days
-            </th>
-            <th class="th-sm">Department
-            </th>
-            <th class="th-sm">Time
-          </th>
-            <th class="th-sm">Subject
-            </th>
-            <th class="th-sm">Location
-            </th>
-            <th class="th-sm">Course hour
-          </th>
-            <th class="th-sm">Lecture
-            </th>
-            <th class="th-sm">Action
-            </th>
-          </tr>
-    </tfoot>
-  </table>
-    
-    <!--!time-table-->
+      </td>
+    </tr>
+
+   
+  
+      
+  </tbody>
+  <tfoot>
+    <tr>
+        <th class="th-sm">Image
+        </th>
+        <th class="th-sm">Title
+        </th>
+        <th class="th-sm"> by
+      </th>
+        <th class="th-sm">Date
+        </th>
+        <th class="th-sm"> Position
+      </th>
+        <th class="th-sm">Action
+        </th>
+      </tr>
+  </tfoot>
+</table>
                            
                 
            <!-- The Modal -->
@@ -367,102 +264,60 @@
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Add Time Table</h4>
+          <h4 class="modal-title">Blogs</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         
         <!-- Modal body -->
-        <center>
-            <div class="logo">
-                <img style="width: 200px; ;" src="image/picture1.png" alt="">
-            </div>
-        <form action="/action_page.php" class="form  border-dark badge-info  mt- p-3">
+        <form action="/action_page.php" class="form p-3">
             <div class="form-group">
-              <label for="dep">Select Department</label>
-             <select class="w-100" name="dep" id="dep">
-                <option value="Electrical">select Department----</option>
-                <option value="Electrical">Electricals</option>
-                <option value="Electrical">Electricals</option>
-                <option value="Electrical">Electricals</option>
-             </select>
+              <label for="title">Blog Title</label>
+              <input type="text" class="form-control" id="title" placeholder="Enter title" name="title" required>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlFile1">Add Image</label>
+              <input type="file" class="form-control-file" id="exampleFormControlFile1">
             </div>
 
+            <!-- <div class="form-group">
+                <label for="exampleFormControlFile1">Example file input</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+              </div>
+
+              --> 
+             
             <div class="form-group">
-                <label for="dep">Select Level</label>
-               <select class="w-100" name="lev" id="lev">
-                <option value="not selected">select level----</option>
-                  <option value="Electrical">100</option>
-                  <option value="Electrical">200</option>
-                  <option value="Electrical">300</option>
-                  <option value="Electrical">400</option>
-               </select>
-              </div>
-
-              <div class="form-group">
-                <label for="dep">Select Section</label>
-               <select class="w-100" name="sec" id="sec">
-                <option value="not selected">select Section----</option>
-                  <option value="Electrical">Morning</option>
-                  <option value="Electrical">Evening</option>
-                  
-               </select>
-              </div>
-
-              
-        
+              <label for="pwd">category</label>
+              <input type="text" class="form-control" id="category" placeholder="Enter category" name="category" required>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
 
             <div class="form-group">
-                <label for="course">Subject</label>
-                <input type="text" class="form-control" id="subject" placeholder="Enter subject" name="subject" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
-              </div>
+              <label for="comment">Blog Content</label>
+              <textarea value="3"  class="form-control" rows="5"  id="summernote"   name="blog"></textarea>
+            </div>
 
-              <div class="form-group">
-                <label for="course">Location</label>
-                <input type="text" class="form-control" id="location" placeholder="Enter Location" name="location" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
-              </div>
-
-              <div class="form-group">
-                <label for="course">Lecture</label>
-                <input type="text" class="form-control" id="Lecture" placeholder="Enter Lecture Name" name="lecture" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
-              </div>
-
-              <div class="form-group">
-                <label for="dep">Course hour</label>
-               <select name="hour" id="dep">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-               </select>
-              </div>
-
-              <div class="form-group">
-                <label for="course">Start Time</label>
-                <input type="time" class="form-control" id="str-time" name="str-time" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
-              </div>
-
-              <div class="form-group">
-                <label for="course">End Time</label>
-                <input type="time" class="form-control" id="end-time" name="end-time" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
-              </div>
-          
-
-<!-- Sign in button -->
-<button class="btn btn-success  btn-block" type="submit">Submit</button>
-
-
-</form>
-</center>
+            
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <script>$('#summernote').summernote({
+            placeholder: '<?php  echo $about ?>',
+            tabsize: 2,
+            height: 120,
+            toolbar: [
+              ['style', ['style']],
+              ['font', ['bold', 'underline', 'clear']],
+              ['color', ['color']],
+              ['para', ['ul', 'ol', 'paragraph']],
+              ['table', ['table']],
+              ['insert', ['link', 'picture', 'video']],
+              ['view', ['fullscreen', 'codeview', 'help']]
+            ]
+          });</script>
         <!-- Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -498,21 +353,6 @@
     $(document).ready(function () {
   $('#dtBasicExample').DataTable();
   $('.dataTables_length').addClass('bs-select');
-});
-
-$('#summernote').summernote({
-  placeholder: '<?php  echo $about ?>',
-  tabsize: 2,
-  height: 120,
-  toolbar: [
-    ['style', ['style']],
-    ['font', ['bold', 'underline', 'clear']],
-    ['color', ['color']],
-    ['para', ['ul', 'ol', 'paragraph']],
-    ['table', ['table']],
-    ['insert', ['link', 'picture', 'video']],
-    ['view', ['fullscreen', 'codeview', 'help']]
-  ]
 });
 </script>
     
