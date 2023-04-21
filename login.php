@@ -77,7 +77,7 @@ $result=mysqli_query($conn,$sql);
 
 
     else{
-      echo"<script>alert(' Your login details are incorrect! please try again  !'); window.location='login.php'</script>";
+      echo"<script>alert(' Your login details are incorrect! please make sure your details are correct and try agian !'); window.location='login.php'</script>";
     }
 
 
